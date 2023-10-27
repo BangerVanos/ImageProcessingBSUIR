@@ -33,9 +33,9 @@ def find_contours(grayscale_image: PIL.Image.Image, gradient_threshold: int = 10
 
     for i in range(image_pixels.shape[0] - 1):
         for j in range(image_pixels.shape[1] - 1):
-            up_pixel = image_pixels[i][j + 1]
-            right_pixel = image_pixels[i + 1][j]
             current_pixel = image_pixels[i][j]
+            right_pixel = image_pixels[i][j + 1]
+            up_pixel = image_pixels[i + 1][j]
 
             dx = abs(right_pixel - current_pixel)
             dy = abs(up_pixel - current_pixel)

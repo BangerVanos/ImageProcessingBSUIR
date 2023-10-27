@@ -4,7 +4,7 @@ import numpy as np
 
 
 if __name__ == "__main__":
-    original_image = Image.open("flip.jpg")
+    original_image = Image.open("image.jpg")
 
     # Median filter test
     filtered_image = median_filter(original_image, 4)
@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     # Edge highlighting test
     grayscale_image = filtered_image.convert('L')
-    image_with_edges = find_contours(grayscale_image, gradient_threshold=10)
+    image_with_edges = find_contours(grayscale_image, gradient_threshold=160)
     image_with_edges.save('edge_image.jpg')
 
     # Equalizing test
